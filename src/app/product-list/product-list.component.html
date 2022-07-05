@@ -1,9 +1,14 @@
 <h2>Products</h2>
-
+<!-- 타입 스크립트에 있는걸 html로 쓰기 위해서 -->
 <div *ngFor="let product of products">
   <h3>
-    {{ product.name }}
+    <a [title]="product.name + '입니다.'">
+      {{ product.name }}
+    </a>
   </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+  <button type="button" (click)="share()">Share</button>
 </div>
 
 <!-- 
